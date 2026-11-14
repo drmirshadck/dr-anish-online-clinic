@@ -1,0 +1,20 @@
+{
+  "name": "Dr. Sample Name — Online Clinic",
+  "short_name": "Dr. Sample",
+  "description": "Book an online video consultation.",
+  "start_url": "./?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#074a50",
+  "lang": "en-IN",
+  "categories": ["health", "medical"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Doctor dashboard", "url": "doctor.html", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Book an appointment", "url": "./#book", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
