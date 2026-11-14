@@ -135,7 +135,7 @@
   const HELPER = ((S.helper && S.helper.url) || "").replace(/\/$/, "");
   if (!isHost && HELPER) {
     const q = document.createElement("a");
-    q.href = "doctor.html?next=room&d=" + encodeURIComponent(DD.id || ""); q.className = "doc-link"; q.textContent = "Doctor? Start the consultation with your PIN";
+    q.href = "doctor.html?d=" + encodeURIComponent(DD.id || ""); q.className = "doc-link"; q.textContent = "Doctor? Open your dashboard and room with your PIN";
     document.querySelector(".note").appendChild(q);
     if (docToken) {
       const b = document.createElement("button"); b.type = "button"; b.className = "btn"; b.style.marginTop = "12px"; b.style.background = "var(--blue)";
@@ -151,6 +151,7 @@
       document.getElementById("joinForm").appendChild(b);
     }
   }
+  if (isHost || docToken) { const bk = document.querySelector('a.back'); if (bk) { bk.href = 'doctor.html'; bk.textContent = '← Back to dashboard'; } }
   if (isHost) {
     $('roleTag').textContent = 'Doctor login';
     $('title').textContent = 'Start consultations';

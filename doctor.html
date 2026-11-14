@@ -38,6 +38,9 @@
   .tab .n{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:10px;background:var(--accent);color:#fff;font-size:11.5px;margin-left:6px;padding:0 6px}
   .tab[aria-selected=true] .n{background:#fff;color:var(--deep)}
   .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .roombar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--deep);color:#fff;border-radius:18px;padding:16px 18px;margin-bottom:12px}
+  .roombar b{display:block;font-size:17px}.roombar span{font-size:13px;opacity:.85}
+  .roombar .rbtns{display:flex;gap:8px;flex-wrap:wrap}.roombar .btn{background:#fff;color:var(--deep)}
   .chip{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px;color:var(--muted)}
   .chip[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
   .card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;border:1px solid var(--line)}
@@ -132,7 +135,7 @@ function showLogin(msg) {
 function logout() { sess = null; store.set(null); clearInterval(timer); showLogin(); }
 $("logout").onclick = logout;
 $("refresh").onclick = () => load(true);
-function afterLogin() { if (params.get("next") === "room") return openRoom(params.get("d") || (isDesk() ? DOCS[0].id : sess.role)); start(); }
+function afterLogin() { start(); }   // always open the dashboard; the room is one tap away (room bar)
 
 /* ---------- helpers ---------- */
 const TZ = "Asia/Kolkata";
@@ -168,7 +171,9 @@ function render() {
   if (tab === "past") body = D.length ? D.map(card).join("") : `<div class="empty">No consultations in the last 7 days.</div>`;
   if (tab === "leave") body = leaveView();
   if (tab === "report") body = reportView();
-  $("main").innerHTML = `${notifyBox}${chips}<div class="tabs" role="tablist">${T("pending", "Requests", P.length)}${T("upcoming", "Upcoming", U.length)}${T("past", "Done", 0)}${T("leave", "Leave", 0)}${T("report", "Report", 0)}</div>${body}
+  const myRooms = isDesk() ? sess.doctors : sess.doctors.filter(d => d.id === sess.role);
+  const roomBar = `<div class="roombar"><div><b>${isDesk() ? "Consultation rooms" : "Your consultation room"}</b><span>Open the room and admit your patient from the waiting room.</span></div><div class="rbtns">${myRooms.map(d => `<button class="btn" data-call="${esc(d.id)}">${isDesk() ? esc(d.name.replace(/^Dr\.?\s*/i, "Dr ")) + "'s room" : "Open my room"}</button>`).join("")}</div></div>`;
+  $("main").innerHTML = `${roomBar}${notifyBox}${chips}<div class="tabs" role="tablist">${T("pending", "Requests", P.length)}${T("upcoming", "Upcoming", U.length)}${T("past", "Done", 0)}${T("leave", "Leave", 0)}${T("report", "Report", 0)}</div>${body}
     <p class="note" style="text-align:center;margin-top:10px">Times are in India time (IST).</p>`;
   document.querySelectorAll("[data-t]").forEach(b => b.onclick = () => { tab = b.dataset.t; render(); if (tab === "leave") loadLeave(); });
   document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { filter = b.dataset.f; render(); });

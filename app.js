@@ -103,7 +103,7 @@ ${DOCS.length > 1 ? `<section id="doctors"><div class="wrap">
   <div class="book-head rv"><div><p class="eyebrow">Consultation room</p><h2 style="margin-top:12px">Join your video consultation</h2><p>At your appointment time, open your doctor's room. You wait in the waiting room until the doctor lets you in. No app needed.</p></div></div>
   <div class="docs">${DOCS.map(d => `<article class="doc-card room-card rv"><img src="${esc(d.photo)}" alt="${esc(d.name)}" loading="lazy"><div><h3>${esc(d.name)}</h3><p class="dt">Private video room</p>
     <div class="room-acts"><a class="btn btn-solid" href="consult.html?d=${encodeURIComponent(d.id)}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>Join as patient</a>
-    <a class="go" href="doctor.html?next=room&amp;d=${encodeURIComponent(d.id)}">Doctor? Start with your PIN →</a></div></div></article>`).join("")}</div>
+    <a class="go" href="doctor.html?d=${encodeURIComponent(d.id)}">Doctor? Dashboard &amp; room with your PIN →</a></div></div></article>`).join("")}</div>
 </div></section>
 
 <section class="circle-sec"><div class="wrap"><div class="circle"><div>
