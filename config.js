@@ -51,6 +51,7 @@ window.SITE = {
     heading: "A clinic that takes the time to understand the whole person, not just the complaint.",
     paragraphs: [
       "Dr. Anish Mohan trained at Government Homoeopathic Medical College, Calicut, and founded Homoeocare Multi Speciality Clinic in Manjakkal, Cherpulassery, in 2015. Eleven years on, the clinic has grown into a full team serving families across Palakkad.",
+      "Dr. Sariga Sivan completed her BHMS at the University of Calicut in 2013 and brings 12 years of homoeopathic practice. Registered with the Travancore-Cochin Council of Homoeopathic Medicine (Reg. No. 10674), she consults alongside Dr. Anish at Homoeocare.",
       "Consultations are unhurried and detailed. Each one begins with a full case history so that treatment is individual to the patient. The online clinic brings that same approach to patients who cannot travel to Cherpulassery."
     ]
   },
