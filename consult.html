@@ -50,6 +50,8 @@
   .note{margin-top:16px;text-align:center;color:var(--muted);font-size:14px}
   .note a{color:var(--blue);font-weight:600}
   a.quiet{color:inherit;text-decoration:none;margin-left:6px;cursor:default}
+  a.doc-link{display:block;margin-top:8px;font-weight:700;color:var(--blue);text-decoration:none}
+  a.doc-link:hover{text-decoration:underline}
   .err{display:none;margin-bottom:18px;padding:14px 16px;border-radius:14px;background:#fff4e5;color:#7a4b00;font-size:15px}
   @media (max-width:900px){
     .intro{grid-template-columns:1fr}
@@ -133,7 +135,7 @@
   const HELPER = ((S.helper && S.helper.url) || "").replace(/\/$/, "");
   if (!isHost && HELPER) {
     const q = document.createElement("a");
-    q.href = "doctor.html?next=room&d=" + encodeURIComponent(DD.id || ""); q.className = "quiet"; q.setAttribute("aria-label", "Clinic login"); q.textContent = "·";
+    q.href = "doctor.html?next=room&d=" + encodeURIComponent(DD.id || ""); q.className = "doc-link"; q.textContent = "Doctor? Start the consultation with your PIN";
     document.querySelector(".note").appendChild(q);
     if (docToken) {
       const b = document.createElement("button"); b.type = "button"; b.className = "btn"; b.style.marginTop = "12px"; b.style.background = "var(--blue)";

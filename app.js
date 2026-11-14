@@ -36,7 +36,7 @@ let T = DOC.consultations;
 const setDoc = id => { DOC = DOCS.find(d => d.id === id) || DOCS[0]; T = DOC.consultations; };
 
 /* ---------- page ---------- */
-const nav = [["about","About"],["experience","Experience"]].concat(DOCS.length > 1 ? [["doctors","Doctors"]] : []).concat([["book","Consultations"]]).concat(igUrl ? [["social","Instagram"]] : [], [["faq","FAQ"],["contact","Contact"]]);
+const nav = [["about","About"]].concat(DOCS.length > 1 ? [["doctors","Doctors"]] : []).concat([["book","Book"],["room","Consultation room"]]).concat(igUrl ? [["social","Instagram"]] : [], [["faq","FAQ"],["contact","Contact"]]);
 $("#app").innerHTML = `
 <div class="navwrap"><div class="pill">
   <a class="brand" href="#top" aria-label="${esc(D.name)} home">${LOGO}<span><b>${esc(S.brand.title)}</b><small>${esc(S.brand.subtitle)}</small></span></a>
@@ -52,7 +52,7 @@ $("#app").innerHTML = `
       <h1>${esc(D.name)}</h1>
       <p class="role">${esc(D.role)}</p>
       <p class="lead">${esc(D.lead)}</p>
-      <div class="cta"><button class="btn btn-light" data-book>Book a consultation</button><a class="btn btn-line" href="#experience">View experience</a></div>
+      <div class="cta"><button class="btn btn-light" data-book>Book a consultation</button><a class="btn btn-line" href="#room">Consultation room</a></div>
     </div>
     <div class="portrait"><span class="ring" aria-hidden="true"></span>
       <div class="disc"><img src="${esc(D.photo)}" alt="${esc(D.name)}"></div>
@@ -99,6 +99,13 @@ ${DOCS.length > 1 ? `<section id="doctors"><div class="wrap">
   </div>
 </div></section>
 
+<section class="room-sec" id="room"><div class="wrap">
+  <div class="book-head rv"><div><p class="eyebrow">Consultation room</p><h2 style="margin-top:12px">Join your video consultation</h2><p>At your appointment time, open your doctor's room. You wait in the waiting room until the doctor lets you in. No app needed.</p></div></div>
+  <div class="docs">${DOCS.map(d => `<article class="doc-card room-card rv"><img src="${esc(d.photo)}" alt="${esc(d.name)}" loading="lazy"><div><h3>${esc(d.name)}</h3><p class="dt">Private video room</p>
+    <div class="room-acts"><a class="btn btn-solid" href="consult.html?d=${encodeURIComponent(d.id)}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>Join as patient</a>
+    <a class="go" href="doctor.html?next=room&amp;d=${encodeURIComponent(d.id)}">Doctor? Start with your PIN →</a></div></div></article>`).join("")}</div>
+</div></section>
+
 <section class="circle-sec"><div class="wrap"><div class="circle"><div>
   <p class="eyebrow" style="color:var(--sky)">${esc(S.panel.eyebrow)}</p>
   <h2>${esc(S.panel.heading)}</h2><p>${esc(S.panel.text)}</p>
@@ -125,7 +132,7 @@ ${igUrl ? `<section class="insta" id="social"><div class="wrap insta-grid">
 
 <footer id="contact"><div class="wrap">
   <div class="foot rv">
-    <div><h3>Booking and enquiries</h3><div class="copyrow"><span id="phone">${esc(C.phoneDisplay)}</span><button class="mini" data-copy="phone">Copy</button></div><p style="margin-top:8px">${esc(C.hours)}</p></div>
+    <div><h3>Booking and enquiries</h3><div class="copyrow"><span id="phone">${esc(C.phoneDisplay)}</span><button class="mini" data-copy="phone">Copy</button></div><p style="margin-top:8px">${esc(C.hours)}</p><p style="margin-top:14px"><a class="foot-room" href="#room">Consultation room →</a></p></div>
     <div><h3>Clinic</h3><p>${[C.clinicName].concat(C.address).map(esc).join("<br>")}</p></div>
     ${igUrl ? `<div><h3>Follow</h3><p>Instagram<br><a href="${igUrl}" target="_blank" rel="noopener">@${esc(IG.handle)}</a></p></div>` : "<div></div>"}
   </div>
