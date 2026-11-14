@@ -144,7 +144,7 @@ window.SITE = {
   faq: [
     { q: "Can I choose which doctor I consult?", a: "Yes. When you tap Book, choose your doctor first. Your appointment goes to that doctor, and you meet them in their own private video room." },
     { q: "Do I need to install an app?", a: "No. The consultation opens in your browser on this website. Chrome or Safari on a phone or laptop works best." },
-    { q: "How do I receive the consultation link?", a: "After you pay and pick your time, the clinic confirms your booking. Your consultation link is sent by email and WhatsApp, with reminders 24 hours and 1 hour before." },
+    { q: "How do I receive the consultation link?", a: "After you pay and pick your time, the clinic confirms your booking and a confirmation email with your consultation link is sent to you." },
     { q: "Can I consult from outside India?", a: "Yes. Book the same way. If you can't pay by UPI, message the clinic on WhatsApp for other payment options." },
     { q: "How will I get my medicines?", a: "After the consultation, the clinic arranges dispatch to your address. Delivery time depends on your location." },
     { q: "Can I reschedule?", a: "Yes. Use the reschedule link in your confirmation email, or message the clinic on WhatsApp." }

@@ -94,7 +94,7 @@ ${DOCS.length > 1 ? `<section id="doctors"><div class="wrap">
   <div class="steps">
     <div class="step rv"><b>Choose a consultation</b><p>Pick the consultation that suits you.</p></div>
     <div class="step rv"><b>Pay by UPI</b><p>Google Pay, PhonePe, Paytm or any UPI app.</p></div>
-    <div class="step rv"><b>Pick your time</b><p>Choose a slot from the doctor's live calendar. Your link arrives by email and WhatsApp.</p></div>
+    <div class="step rv"><b>Pick your time</b><p>Choose a slot from the doctor's live calendar. Your link arrives by email.</p></div>
     <div class="step rv"><b>Join the call</b><p>The video call opens on this website. No app to install.</p></div>
   </div>
 </div></section>
@@ -214,7 +214,7 @@ function render() {
       return;
     }
     box.innerHTML = `${t.fee > 0 ? `<div class="summary"><div><span>${esc(t.name)}</span><b>₹${t.fee} paid by UPI</b></div></div>` : ""}
-      <p class="small">Choose your date and time. Please enter your WhatsApp number so we can send your consultation link.</p>
+      <p class="small">Choose your date and time. Please enter your WhatsApp number so the clinic can reach you.</p>
       <div id="calInline" style="min-height:520px"></div>
       <div class="sheet-actions"><button class="btn btn-ghost" id="back">Back</button></div>`;
     $("#back", box).onclick = () => { st.step = t.fee > 0 ? 1 : 0; render(); };
@@ -233,7 +233,7 @@ function render() {
       <h3>${paid ? "Booking request received!" : "Your appointment is booked!"}</h3>
       <p style="color:var(--muted)">${paid ? "We'll verify your UPI payment and confirm your appointment. A <b>confirmation email</b> with your video consultation link will be sent to" : "A <b>confirmation email</b> with your appointment details will be sent to"}</p>
       <p><b>${esc(st.email || "the email address you entered")}</b></p>
-      <p class="small">${paid ? "We'll also send the link to your WhatsApp number. " : ""}Please check your Spam / Junk folder if you don't see the email.</p>
+      <p class="small">Please check your Spam / Junk folder if you don't see the email.</p>
       <button class="btn btn-solid" id="ok">Close</button></div>`;
     $("#ok", box).onclick = closeSheet;
   }
