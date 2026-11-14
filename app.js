@@ -133,7 +133,7 @@ ${igUrl ? `<section class="insta" id="social"><div class="wrap insta-grid">
   <div class="legal"><span><a href="doctor.html" class="quiet" aria-label="Clinic login">©</a> ${esc(S.meta.year)} ${esc(D.name)} · ${esc(C.clinicName)}</span><span>Online consultations are not for medical emergencies.</span></div>
 </div></footer>
 
-<a class="fab-wa" href="${wa(`Hi, I'd like to book a consultation with ${D.name}.`)}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span class="tip">Chat with us on WhatsApp</span>${WAI}</a>
+<a class="fab-wa" href="${wa(`Hi, I'd like to book a consultation at ${C.clinicName}.`)}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span class="tip">Chat with us on WhatsApp</span>${WAI}</a>
 <button class="fab-book" data-book id="fabBook"><span class="dot"></span>Book appointment</button>`;
 
 /* ---------- booking (same flow as the Dr Murshida site) ----------
@@ -210,7 +210,7 @@ function render() {
   } else if (st.step === 2) {
     if (!CALU()) {
       box.innerHTML = `<p>Online booking is being set up. Please message the clinic on WhatsApp to book your time.</p>
-        <a class="btn btn-solid" target="_blank" rel="noopener" href="${wa(`Hi, I'd like to book a ${t.name} with ${D.name}.${st.utr ? " UPI ref: " + st.utr : ""}`)}">Message on WhatsApp</a>`;
+        <a class="btn btn-solid" target="_blank" rel="noopener" href="${wa(`Hi, I'd like to book a ${t.name} with ${DOC.name}.${st.utr ? " UPI ref: " + st.utr : ""}`)}">Message on WhatsApp</a>`;
       return;
     }
     box.innerHTML = `${t.fee > 0 ? `<div class="summary"><div><span>${esc(t.name)}</span><b>₹${t.fee} paid by UPI</b></div></div>` : ""}

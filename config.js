@@ -1,36 +1,34 @@
 /* =====================================================================
-   CLINIC SETTINGS (DotCom Pro) — the ONLY file to edit for a new client.
-   1. Fill in every field below (keep the quotes and commas).
-   2. Replace doctor.jpg with the doctor's portrait (same file name).
-   3. Push to the doctor's NEW GitHub repo and turn on GitHub Pages.
-   Leave a field as "" to hide that part of the site.
+   CLINIC SETTINGS (DotCom Pro) — Homoeocare Multi Speciality Clinic
+   DEMO: Dr. Sarigha's profile, fees, UPI and registration details are
+   placeholders until the clinic sends the real profiles and photos.
    ===================================================================== */
 window.SITE = {
 
   /* ---------- Main doctor (the hero at the top of the site) ---------- */
   doctor: {
-    name: "Dr. Sample Name",              // full name as shown in the hero
-    shortName: "Dr. Sample",              // used in sentences ("Consult Dr. Sample privately")
-    photo: "doctor.jpg",                  // portrait in the same folder
-    eyebrow: "Physician · Since 2015",    // small line above the name
-    role: "MBBS, MD · Consultant Physician, Sample Clinic",
-    lead: "Over a decade of clinical practice, now open for private video consultations with patients across India and abroad.",
-    badgeNumber: "11",                    // big number on the photo badge
+    name: "Dr. Anish Mohan",
+    shortName: "our doctors",
+    photo: "dr-anish.jpg",
+    eyebrow: "Homoeopathic Physician · Since 2015",
+    role: "BHMS · Chief Consultant, Homoeocare Multi Speciality Clinic",
+    lead: "Over a decade of homoeopathic practice in Cherpulassery, Palakkad, now open for private video consultations with patients across India and abroad.",
+    badgeNumber: "11",
     badgeText: "years of<br>clinical practice"
   },
 
   /* ---------- Top bar ---------- */
   brand: {
-    title: "DR. SAMPLE NAME",
-    subtitle: "Online Clinic"
+    title: "HOMOEOCARE",
+    subtitle: "Multi Speciality Online Clinic"
   },
 
-  /* ---------- Colours (any hex colour) ---------- */
+  /* ---------- Colours ---------- */
   theme: {
-    brand: "#0e8a8a",       // main colour (buttons, highlights)
-    brandDeep: "#074a50",   // dark colour (hero, footer)
-    accent: "#d94a3d",      // "Book appointment" button
-    light: "#9fe3dc"        // light highlight text on dark areas
+    brand: "#0e8a8a",
+    brandDeep: "#074a50",
+    accent: "#d94a3d",
+    light: "#9fe3dc"
   },
 
   /* ---------- Stats band under the hero ---------- */
@@ -45,108 +43,126 @@ window.SITE = {
 
   /* ---------- About ---------- */
   about: {
-    heading: "A physician who takes the time to understand the whole person, not just the complaint.",
+    heading: "A clinic that takes the time to understand the whole person, not just the complaint.",
     paragraphs: [
-      "Dr. Sample Name trained at Sample Medical College and founded Sample Clinic in 2015.",
-      "Consultations are unhurried and detailed. The online clinic brings that same approach to patients who cannot travel."
+      "Dr. Anish Mohan trained at Government Homoeopathic Medical College, Calicut, and founded Homoeocare Multi Speciality Clinic in Manjakkal, Cherpulassery, in 2015. Eleven years on, the clinic has grown into a full team serving families across Palakkad.",
+      "Consultations are unhurried and detailed. Each one begins with a full case history so that treatment is individual to the patient. The online clinic brings that same approach to patients who cannot travel to Cherpulassery."
     ]
   },
 
   /* ---------- Experience ---------- */
   experience: {
-    // icon: "degree" | "clinic" | "language" | "registration" | "award"
     credentials: [
-      { icon: "degree",       title: "MBBS, MD",            text: "Sample Medical College" },
-      { icon: "clinic",       title: "Founder & Consultant", text: "Sample Clinic, City" },
-      { icon: "language",     title: "Languages",           text: "Malayalam, English" },
-      { icon: "registration", title: "Registration",        text: "Reg. No. 00000" }
+      { icon: "degree",       title: "BHMS",                         text: "Govt. Homoeopathic Medical College, Calicut" },
+      { icon: "clinic",       title: "Founder & Chief Consultant",   text: "Homoeocare Multi Speciality Clinic, Cherpulassery" },
+      { icon: "language",     title: "Languages",                    text: "Malayalam, English" },
+      { icon: "registration", title: "Registration",                 text: "Registration number to be added" }
     ],
     timeline: [
-      { year: "2010–2015", title: "Medical degree",        text: "Sample Medical College." },
-      { year: "2015",      title: "Founded Sample Clinic", text: "Opened as a family clinic." },
-      { year: "2026",      title: "Online clinic",         text: "Opened online video consultations." }
+      { year: "2010–2015", title: "Bachelor of Homoeopathic Medicine and Surgery", text: "Government Homoeopathic Medical College, Calicut." },
+      { year: "2015",      title: "Founded Homoeocare Multi Speciality Clinic",    text: "Opened in Manjakkal, Cherpulassery, Palakkad, as a family homoeopathy clinic." },
+      { year: "2015–now",  title: "Chief Consultant",                              text: "Leads consultations and the clinical team at the clinic." },
+      { year: "2026",      title: "11 years of the clinic",                        text: "Marked the clinic's 11th anniversary and opened online video consultations." }
     ]
   },
 
   /* ---------- Clinic (Pro) ---------- */
   clinic: {
-    name: "Sample Clinic",
-    whatsapp: "919000000000",       // clinic's own WhatsApp (digits only) — patients reply here
-    googleReviewUrl: "",            // the clinic's Google review link (for review requests)
-    upiId: "sample@upi",            // default UPI for payments (a doctor can have their own below)
-    payeeName: "Sample Clinic"
+    name: "Homoeocare Multi Speciality Clinic",
+    whatsapp: "917559882838",
+    googleReviewUrl: "",
+    upiId: "homoeocare@upi",          // DEMO — replace with the clinic's real UPI ID
+    payeeName: "Homoeocare Multi Speciality Clinic"
   },
 
-  /* ---------- Doctors (Pro) — one or more. With one doctor the list hides itself. ----------
-     Each doctor has their OWN Cal.com and Daily (opened with their own Microsoft email).
-     calUser = cal.com/<calUser>;  each consultation calSlug = cal.com/<calUser>/<calSlug>
-     kind: "new" or "review" (used in the monthly report)                                    */
+  /* ---------- Doctors (Pro) ---------- */
   doctors: [
     {
-      id: "sample",                                  // short id, letters/numbers only
-      name: "Dr. Sample Name",
-      photo: "doctor.jpg",
-      title: "MBBS, MD · Consultant Physician",
-      bio: "Over a decade of clinical practice. Consultations are unhurried and detailed.",
+      id: "anish",
+      name: "Dr. Anish Mohan",
+      photo: "dr-anish.jpg",
+      title: "BHMS · Chief Consultant",
+      bio: "Founder of Homoeocare Multi Speciality Clinic. Over a decade of homoeopathic practice, with detailed, unhurried consultations built on a full case history.",
       languages: "Malayalam, English",
-      calUser: "",                                   // e.g. "dr-sample-abc123"
-      roomUrl: "",                                   // the doctor's Daily room, e.g. "https://drsample.daily.co/consult"
-      upiId: "", payeeName: "",                      // leave "" to use the clinic UPI
+      calUser: "",                     // set once Dr. Anish's Cal.com account is created
+      roomUrl: "",                     // Dr. Anish's own Daily room
+      upiId: "", payeeName: "",
       consultations: [
         { calSlug: "online-video-consultation", kind: "new", name: "New consultation", duration: "30 minutes", fee: 500, featured: true,
-          text: "A detailed first consultation with a complete case history, followed by your prescription." },
+          text: "A detailed first consultation with a complete case history, followed by your prescription and medicine dispatch." },
         { calSlug: "review-consultation", kind: "review", name: "Review consultation", duration: "20 minutes", fee: 300,
           text: "For patients already under the doctor's care. Progress review and an updated prescription." },
         { calSlug: "clinic-visit", kind: "new", name: "Clinic visit", duration: "At the clinic", fee: 0, inClinic: true,
-          text: "Book a time to see the doctor in person at the clinic. Pay at the clinic." }
+          text: "Book a time to see the doctor in person at the clinic in Manjakkal. Pay at the clinic." }
+      ]
+    },
+    {
+      id: "sarigha",
+      name: "Dr. Sarigha",
+      photo: "dr-sarigha.jpg",
+      title: "BHMS · Consultant Homoeopathic Physician",
+      bio: "Consultant at Homoeocare Multi Speciality Clinic. Full profile coming soon.",
+      languages: "Malayalam, English",
+      calUser: "",                     // set once Dr. Sarigha's Cal.com account is created
+      roomUrl: "",                     // Dr. Sarigha's own Daily room
+      upiId: "", payeeName: "",
+      consultations: [
+        { calSlug: "online-video-consultation", kind: "new", name: "New consultation", duration: "30 minutes", fee: 500, featured: true,
+          text: "A detailed first consultation with a complete case history, followed by your prescription and medicine dispatch." },
+        { calSlug: "review-consultation", kind: "review", name: "Review consultation", duration: "20 minutes", fee: 300,
+          text: "For patients already under the doctor's care. Progress review and an updated prescription." },
+        { calSlug: "clinic-visit", kind: "new", name: "Clinic visit", duration: "At the clinic", fee: 0, inClinic: true,
+          text: "Book a time to see the doctor in person at the clinic in Manjakkal. Pay at the clinic." }
       ]
     }
   ],
   consultations: { intro: "Choose your doctor and consultation, pay securely by UPI, then pick your time." },
 
-  /* ---------- Clinic helper (Cloudflare) ---------- */
+  /* ---------- Clinic helper (Cloudflare) — demo helper until the clinic's own is set up ---------- */
   helper: {
-    url: "https://sample-clinic-helper.drmirshadck.workers.dev"   // each clinic gets its own helper
+    url: "https://sample-clinic-helper.drmirshadck.workers.dev"
   },
 
   /* ---------- "Consult from anywhere" panel ---------- */
   panel: {
     eyebrow: "Consult from anywhere",
     heading: "The same careful consultation, wherever you are.",
-    text: "Patients from Kerala, across India and the Gulf can consult without travelling.",
-    ticks: ["Private video room", "Full 30 minutes", "Prescription after the call"]
+    text: "Patients from Kerala, across India and the Gulf can consult our doctors without travelling. Medicines are dispatched to your address after the call.",
+    ticks: ["Private video room for each doctor", "Full 30 minutes", "Prescription after the call"]
   },
 
-  /* ---------- Instagram (set handle to "" to hide the section) ---------- */
+  /* ---------- Instagram ---------- */
   instagram: {
-    handle: "sample_clinic",
-    displayName: "Sample Clinic",
-    posts: "150+", followers: "1K+", since: "2015",
-    bio: "<b>Trusted care since 2015</b><br>City, District",
-    text: "Health tips, clinic updates and awareness videos. Follow along to stay up to date."
+    handle: "homoeocare_multispeciality",
+    displayName: "Homoeocare Multi Speciality Clinic",
+    posts: "150+", followers: "1.1K+", since: "2015",
+    bio: "<b>Trusted homoeopathic care since 2015</b><br>Manjakkal, Cherpulassery, Palakkad",
+    text: "Health tips, clinic updates and patient awareness videos from the Homoeocare team. Follow along to stay up to date."
   },
 
   /* ---------- FAQ ---------- */
   faq: [
+    { q: "Can I choose which doctor I consult?", a: "Yes. When you tap Book, choose your doctor first. Your appointment goes to that doctor, and you meet them in their own private video room." },
     { q: "Do I need to install an app?", a: "No. The consultation opens in your browser on this website. Chrome or Safari on a phone or laptop works best." },
-    { q: "How do I receive the consultation link?", a: "After you pay and pick your time, a confirmation email with your consultation link is sent to you. The clinic also sends the link to your WhatsApp." },
+    { q: "How do I receive the consultation link?", a: "After you pay and pick your time, the clinic confirms your booking. Your consultation link is sent by email and WhatsApp, with reminders 24 hours and 1 hour before." },
     { q: "Can I consult from outside India?", a: "Yes. Book the same way. If you can't pay by UPI, message the clinic on WhatsApp for other payment options." },
+    { q: "How will I get my medicines?", a: "After the consultation, the clinic arranges dispatch to your address. Delivery time depends on your location." },
     { q: "Can I reschedule?", a: "Yes. Use the reschedule link in your confirmation email, or message the clinic on WhatsApp." }
   ],
 
   /* ---------- Contact ---------- */
   contact: {
-    phoneDisplay: "+91 90000 00000",
-    whatsapp: "919000000000",        // digits only, with country code — booking requests are sent here
-    hours: "WhatsApp or call, Monday to Saturday.",
-    clinicName: "Sample Clinic",
-    address: ["Street", "City", "District, Kerala"]
+    phoneDisplay: "+91 75598 82838",
+    whatsapp: "917559882838",
+    hours: "Front desk on WhatsApp or call, Monday to Saturday.",
+    clinicName: "Homoeocare Multi Speciality Clinic",
+    address: ["Manjakkal, Cherpulassery", "Palakkad, Kerala"]
   },
 
   /* ---------- Page details ---------- */
   meta: {
-    title: "Dr. Sample Name",
-    description: "Dr. Sample Name. Book an online video consultation.",
+    title: "Homoeocare Multi Speciality Clinic | Online Consultations",
+    description: "Homoeocare Multi Speciality Clinic, Cherpulassery. Book a private online video consultation with Dr. Anish Mohan or Dr. Sarigha.",
     year: "2026"
   }
 };
