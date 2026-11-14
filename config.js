@@ -85,7 +85,7 @@ window.SITE = {
       bio: "Founder of Homoeocare Multi Speciality Clinic. Over a decade of homoeopathic practice, with detailed, unhurried consultations built on a full case history.",
       languages: "Malayalam, English",
       calUser: "dr-anish-mohan",        // cal.com/dr-anish-mohan
-      roomUrl: "",                     // Dr. Anish's own Daily room
+      roomUrl: "https://dranishmohan.daily.co/consult",
       upiId: "", payeeName: "",
       consultations: [
         { calSlug: "online-video-consultation", kind: "new", name: "New consultation", duration: "30 minutes", fee: 500, featured: true,
