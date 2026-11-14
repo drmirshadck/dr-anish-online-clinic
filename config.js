@@ -118,9 +118,9 @@ window.SITE = {
   ],
   consultations: { intro: "Choose your doctor and consultation, pay securely by UPI, then pick your time." },
 
-  /* ---------- Clinic helper (Cloudflare) — demo helper until the clinic's own is set up ---------- */
+  /* ---------- Clinic helper (Cloudflare) ---------- */
   helper: {
-    url: "https://sample-clinic-helper.drmirshadck.workers.dev"
+    url: "https://homoeocare-helper.drmirshadck.workers.dev"
   },
 
   /* ---------- "Consult from anywhere" panel ---------- */
