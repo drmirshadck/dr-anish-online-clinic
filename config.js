@@ -84,7 +84,7 @@ window.SITE = {
       title: "BHMS · Chief Consultant",
       bio: "Founder of Homoeocare Multi Speciality Clinic. Over a decade of homoeopathic practice, with detailed, unhurried consultations built on a full case history.",
       languages: "Malayalam, English",
-      calUser: "",                     // set once Dr. Anish's Cal.com account is created
+      calUser: "dr-anish-mohan",        // cal.com/dr-anish-mohan
       roomUrl: "",                     // Dr. Anish's own Daily room
       upiId: "", payeeName: "",
       consultations: [
