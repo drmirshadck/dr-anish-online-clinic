@@ -15,7 +15,7 @@ REVIEW_URL = ""                         # clinic's Google review link ("" = no r
 SITE_URL = "https://drmirshadck.github.io/dr-anish-online-clinic"
 ALLOWED_ORIGINS = "https://drmirshadck.github.io"
 VAPID_SUBJECT = "mailto:support@arshees.com"
-WA_ENABLED = "1"
+WA_ENABLED = "0"                        # WhatsApp off for now (tap-to-send still works)
 WA_LANG = "en"
 WA_PHONE_ID = "1442684148932294"        # DotCom WhatsApp sender (Meta test number for now)
 # One entry per doctor. types: calSlug -> name, fee, kind (new/review). whatsapp: doctor's alerts number.
