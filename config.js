@@ -8,13 +8,18 @@ window.SITE = {
   /* ---------- Main doctor (the hero at the top of the site) ---------- */
   doctor: {
     name: "Dr. Anish Mohan",
+    heading: "Dr. Anish Mohan<br><em>&amp; Dr. Sariga Sivan</em>",   // both doctors in the hero
     shortName: "our doctors",
     photo: "dr-anish.jpg",
-    eyebrow: "Homoeopathic Physician · Since 2015",
-    role: "BHMS · Chief Consultant, Homoeocare Multi Speciality Clinic",
+    duo: [
+      { photo: "dr-anish.jpg",   name: "Dr. Anish Mohan",  title: "BHMS · Chief Consultant" },
+      { photo: "dr-sarigha.jpg", name: "Dr. Sariga Sivan", title: "BHMS · Consultant" }
+    ],
+    eyebrow: "Homoeopathic Physicians · Since 2015",
+    role: "Homoeocare Multi Speciality Clinic, Cherpulassery",
     lead: "Over a decade of homoeopathic practice in Cherpulassery, Palakkad, now open for private video consultations with patients across India and abroad.",
     badgeNumber: "11",
-    badgeText: "years of<br>clinical practice"
+    badgeText: "years of<br>trusted care"
   },
 
   /* ---------- Top bar ---------- */

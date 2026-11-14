@@ -49,13 +49,13 @@ $("#app").innerHTML = `
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">${esc(D.eyebrow)}</p>
-      <h1>${esc(D.name)}</h1>
+      <h1${D.heading ? ' class="duo"' : ""}>${D.heading || esc(D.name)}</h1>
       <p class="role">${esc(D.role)}</p>
       <p class="lead">${esc(D.lead)}</p>
       <div class="cta"><button class="btn btn-light" data-book>Book a consultation</button><a class="btn btn-line" href="#room">Consultation room</a></div>
     </div>
-    <div class="portrait"><span class="ring" aria-hidden="true"></span>
-      <div class="disc"><img src="${esc(D.photo)}" alt="${esc(D.name)}"></div>
+    ${D.duo ? `<div class="portrait duo">${D.duo.map((p, i) => `<figure class="arch a${i + 1}"><img src="${esc(p.photo)}" alt="${esc(p.name)}"><figcaption><b>${esc(p.name)}</b><span>${esc(p.title)}</span></figcaption></figure>`).join("")}` : `<div class="portrait"><span class="ring" aria-hidden="true"></span>
+      <div class="disc"><img src="${esc(D.photo)}" alt="${esc(D.name)}"></div>`}
       ${D.badgeNumber ? `<div class="badge"><strong>${esc(D.badgeNumber)}</strong><span>${D.badgeText}</span></div>` : ""}
     </div>
   </div>
