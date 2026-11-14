@@ -1,7 +1,7 @@
 /* Service worker: lets the site install as an app and shows the doctor's booking notifications.
    Always loads the latest website from the internet; keeps a copy of the main pages for offline opening. */
 const CACHE = "doc-v2";
-const CORE = ["./", "index.html", "doctor.html", "consult.html", "style.css", "app.js", "config.js", "qrcode.js", "dr-anish.jpg", "dr-sarigha.jpg", "icons/icon-192.png"];
+const CORE = ["./", "index.html", "doctor.html", "consult.html", "style.css", "app.js", "config.js", "qrcode.js", "dr-anish.jpg", "dr-anish-face.jpg", "dr-sarigha-face.jpg", "icons/icon-192.png"];
 
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).catch(() => {})); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n !== CACHE).map(n => caches.delete(n))))); self.clients.claim(); });

@@ -1,6 +1,6 @@
 /* =====================================================================
    CLINIC SETTINGS (DotCom Pro) — Homoeocare Multi Speciality Clinic
-   DEMO: Dr. Sarigha's profile, fees, UPI and registration details are
+   DEMO: fees, UPI and some registration details are
    placeholders until the clinic sends the real profiles and photos.
    ===================================================================== */
 window.SITE = {
@@ -80,7 +80,7 @@ window.SITE = {
     {
       id: "anish",
       name: "Dr. Anish Mohan",
-      photo: "dr-anish.jpg",
+      photo: "dr-anish-face.jpg",
       title: "BHMS · Chief Consultant",
       bio: "Founder of Homoeocare Multi Speciality Clinic. Over a decade of homoeopathic practice, with detailed, unhurried consultations built on a full case history.",
       languages: "Malayalam, English",
@@ -98,10 +98,10 @@ window.SITE = {
     },
     {
       id: "sarigha",
-      name: "Dr. Sarigha",
-      photo: "dr-sarigha.jpg",
+      name: "Dr. Sariga Sivan",
+      photo: "dr-sarigha-face.jpg",
       title: "BHMS · Consultant Homoeopathic Physician",
-      bio: "Consultant at Homoeocare Multi Speciality Clinic. Full profile coming soon.",
+      bio: "BHMS from the University of Calicut (2013), with 12 years of homoeopathic practice at Homoeocare Multi Speciality Clinic, Cherpulassery. Reg. No. 10674, Travancore-Cochin Council of Homoeopathic Medicine.",
       languages: "Malayalam, English",
       calUser: "",                     // set once Dr. Sarigha's Cal.com account is created
       roomUrl: "",                     // Dr. Sarigha's own Daily room
@@ -162,7 +162,7 @@ window.SITE = {
   /* ---------- Page details ---------- */
   meta: {
     title: "Homoeocare Multi Speciality Clinic | Online Consultations",
-    description: "Homoeocare Multi Speciality Clinic, Cherpulassery. Book a private online video consultation with Dr. Anish Mohan or Dr. Sarigha.",
+    description: "Homoeocare Multi Speciality Clinic, Cherpulassery. Book a private online video consultation with Dr. Anish Mohan or Dr. Sariga Sivan.",
     year: "2026"
   }
 };
