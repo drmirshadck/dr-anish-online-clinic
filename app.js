@@ -186,7 +186,7 @@ function render() {
     return;
   }
   if (st.step === 0) {
-    box.innerHTML = `${DOCS.length > 1 ? `<div class="summary"><div><span>Doctor</span><b>${esc(DOC.name)}</b></div></div>` : ""}<p class="small">Choose your consultation type.</p><div style="display:grid;gap:10px">${T.map(x => `<button class="opt" data-t="${esc(x.calSlug)}"><div><b>${esc(x.name)}</b><span>${x.inClinic ? "In person" : "Video call"} · ${esc(x.duration)}</span></div><span class="fee">${x.fee > 0 ? "₹" + x.fee : "Free"}</span></button>`).join("")}</div>`;
+    box.innerHTML = `${DOCS.length > 1 ? `<div class="summary"><div><span>Doctor</span><b>${esc(DOC.name)}</b></div></div>` : ""}<p class="small">Choose your consultation type.</p><div style="display:grid;gap:10px">${T.map(x => `<button class="opt" data-t="${esc(x.calSlug)}"><div><b>${esc(x.name)}</b><span>${x.inClinic ? "In person" : "Video call"} · ${esc(x.duration)}</span></div><span class="fee">${x.fee > 0 ? "₹" + x.fee : (x.inClinic ? "Pay at clinic" : "Free")}</span></button>`).join("")}</div>`;
     box.querySelectorAll("[data-t]").forEach(b => b.onclick = () => { st.type = b.dataset.t; st.step = type().fee > 0 ? 1 : 2; render(); });
     if (DOCS.length > 1) { const bk = document.createElement("div"); bk.className = "sheet-actions"; bk.innerHTML = `<button class="btn btn-ghost">Change doctor</button>`; bk.firstChild.onclick = () => { st.step = -1; render(); }; box.appendChild(bk); }
   } else if (st.step === 1) {

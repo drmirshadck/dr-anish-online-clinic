@@ -20,7 +20,7 @@ window.SITE = {
   /* ---------- Top bar ---------- */
   brand: {
     title: "HOMOEOCARE",
-    subtitle: "Multi Speciality Online Clinic"
+    subtitle: "Online Clinic"
   },
 
   /* ---------- Colours ---------- */
