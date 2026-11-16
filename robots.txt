@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /doctor.html
+Disallow: /consult.html
+
+Sitemap: https://homoeocareonline.com/sitemap.xml
