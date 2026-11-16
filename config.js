@@ -1,7 +1,6 @@
 /* =====================================================================
    CLINIC SETTINGS (DotCom Pro) — Homoeocare Multi Speciality Clinic
-   DEMO: fees, UPI and some registration details are
-   placeholders until the clinic sends the real profiles and photos.
+   Fees (New ₹500, Review ₹300) and UPI confirmed by the clinic on 16 Nov 2026.
    ===================================================================== */
 window.SITE = {
 
@@ -77,8 +76,8 @@ window.SITE = {
     name: "Homoeocare Multi Speciality Clinic",
     whatsapp: "917559882838",
     googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzReTjZPRpzsRtJ87oBfZ4ks",
-    upiId: "homoeocare@upi",          // DEMO — replace with the clinic's real UPI ID
-    payeeName: "Homoeocare Multi Speciality Clinic"
+    upiId: "9496361539@hdfc",        // Aneesh Mohan, HDFC (from the clinic's QR, 16 Nov 2026)
+    payeeName: "Aneesh Mohan"
   },
 
   /* ---------- Doctors (Pro) ---------- */
