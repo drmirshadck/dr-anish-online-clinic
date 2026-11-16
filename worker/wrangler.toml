@@ -19,7 +19,7 @@ WA_ENABLED = "0"                        # WhatsApp off for now (tap-to-send stil
 WA_LANG = "en"
 WA_PHONE_ID = "1442684148932294"        # DotCom WhatsApp sender (Meta test number for now)
 # One entry per doctor. types: calSlug -> name, fee, kind (new/review). whatsapp: doctor's alerts number.
-DOCTORS_JSON = '''[{"id":"anish","name":"Dr. Anish Mohan","whatsapp":"917559882838","roomUrl":"https://dranishmohan.daily.co/consult","types":{"online-video-consultation":{"name":"New consultation","fee":500,"kind":"new"},"review-consultation":{"name":"Review consultation","fee":300,"kind":"review"},"clinic-visit":{"name":"Clinic visit","fee":0,"kind":"new"}}},{"id":"sarigha","name":"Dr. Sariga Sivan","whatsapp":"917559882838","roomUrl":"","types":{"online-video-consultation":{"name":"New consultation","fee":500,"kind":"new"},"review-consultation":{"name":"Review consultation","fee":300,"kind":"review"},"clinic-visit":{"name":"Clinic visit","fee":0,"kind":"new"}}}]'''
+DOCTORS_JSON = '''[{"id":"anish","name":"Dr. Anish Mohan","whatsapp":"917559882838","roomUrl":"https://dranishmohan.daily.co/consult","types":{"online-video-consultation":{"name":"New consultation","fee":500,"kind":"new"},"review-consultation":{"name":"Review consultation","fee":300,"kind":"review"},"clinic-visit":{"name":"Clinic visit","fee":0,"kind":"new"}}},{"id":"sarigha","name":"Dr. Sariga Sivan","whatsapp":"917559882838","roomUrl":"https://drsarigasivan.daily.co/consult","types":{"online-video-consultation":{"name":"New consultation","fee":500,"kind":"new"},"review-consultation":{"name":"Review consultation","fee":300,"kind":"review"},"clinic-visit":{"name":"Clinic visit","fee":0,"kind":"new"}}}]'''
 
 [[kv_namespaces]]
 binding = "PUSH"
