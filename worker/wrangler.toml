@@ -11,7 +11,7 @@ crons = ["*/15 * * * *"]   # WhatsApp reminders (24 h + 1 h) and review requests
 CLINIC_NAME = "Homoeocare Multi Speciality Clinic"
 CLINIC_WHATSAPP = "917559882838"        # clinic's own WhatsApp, shown to patients for questions
 DESK_WHATSAPP = "917559882838"          # front desk gets "new booking" WhatsApp alerts ("" = none)
-REVIEW_URL = ""                         # clinic's Google review link ("" = no review requests)
+REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJzReTjZPRpzsRtJ87oBfZ4ks"                         # clinic's Google review link ("" = no review requests)
 SITE_URL = "https://homoeocareonline.com"
 ALLOWED_ORIGINS = "https://homoeocareonline.com,https://www.homoeocareonline.com,https://drmirshadck.github.io"
 VAPID_SUBJECT = "mailto:support@arshees.com"
