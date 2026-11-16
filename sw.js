@@ -1,6 +1,6 @@
 /* Service worker: lets the site install as an app and shows the doctor's booking notifications.
    Always loads the latest website from the internet; keeps a copy of the main pages for offline opening. */
-const CACHE = "doc-v2";
+const CACHE = "doc-v3";
 const CORE = ["./", "index.html", "doctor.html", "consult.html", "style.css", "app.js", "config.js", "qrcode.js", "dr-anish.jpg", "dr-anish-face.jpg", "dr-sarigha-face.jpg", "icons/icon-192.png"];
 
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).catch(() => {})); self.skipWaiting(); });
@@ -19,6 +19,12 @@ const TEXT = {
   cancelled:   ["Booking cancelled", "A patient cancelled a booking."],
   rescheduled: ["Booking rescheduled", "A patient changed their booking time."]
 };
+// reminders and "patient waiting" (text built from the doctor's name and time only)
+const LIVE = {
+  r60:     d => ["Consultation in 1 hour", `${d.doctorName || "Doctor"}: ${d.title || "consultation"} at ${d.time || ""}.`],
+  r15:     d => ["Consultation in 15 minutes", `${d.doctorName || "Doctor"}: ${d.title || "consultation"} at ${d.time || ""}. Open your room.`],
+  arrived: d => ["Patient is waiting", `A patient is in ${d.doctorName ? d.doctorName + "'s" : "the"} waiting room. Tap to open your room.`]
+};
 async function helperUrl() {
   try {
     const r = await fetch("config.js", { cache: "no-store" });
@@ -28,13 +34,13 @@ async function helperUrl() {
 }
 self.addEventListener("push", e => {
   e.waitUntil((async () => {
-    let kind = "request";
+    let kind = "request", live = null;
     try {
       const h = await helperUrl();
-      if (h) { const r = await fetch(h.replace(/\/$/, "") + "/last-event", { cache: "no-store" }); const d = await r.json(); if (TEXT[d.type]) kind = d.type; }
+      if (h) { const r = await fetch(h.replace(/\/$/, "") + "/last-event", { cache: "no-store" }); const d = await r.json(); if (TEXT[d.type]) kind = d.type; else if (LIVE[d.type]) { kind = d.type; live = LIVE[d.type](d); } }
     } catch (err) {}
-    const [title, body] = TEXT[kind];
-    await self.registration.showNotification(title, { body, icon: "icons/icon-192.png", badge: "icons/icon-192.png", tag: "booking", renotify: true, data: { url: "doctor.html" } });
+    const [title, body] = live || TEXT[kind];
+    await self.registration.showNotification(title, { body, icon: "icons/icon-192.png", badge: "icons/icon-192.png", tag: live ? kind : "booking", renotify: true, requireInteraction: kind === "arrived", data: { url: "doctor.html" } });
   })());
 });
 self.addEventListener("notificationclick", e => {

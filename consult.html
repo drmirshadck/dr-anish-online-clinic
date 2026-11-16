@@ -204,6 +204,14 @@
       err.textContent = 'Could not connect to the consultation room. Please check your internet connection and try again, or WhatsApp the clinic.';
       err.style.display = 'block';
     });
+    // tell the doctor (and front desk) that a patient is waiting
+    let told = false;
+    const tellArrived = () => {
+      if (told || isHost || docToken || !HELPER) return; told = true;
+      fetch(HELPER + '/arrived', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ doctor: DD.id }) }).catch(() => {});
+    };
+    call.on('access-state-updated', ev => { if (ev && ev.access && ev.access.level === 'lobby') tellArrived(); });
+    call.on('joined-meeting', tellArrived);
     const opts = { url: ROOM_URL, userName };
     if (isHost) opts.token = hostToken;
     call.join(opts);
