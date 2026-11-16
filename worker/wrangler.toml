@@ -12,8 +12,8 @@ CLINIC_NAME = "Homoeocare Multi Speciality Clinic"
 CLINIC_WHATSAPP = "917559882838"        # clinic's own WhatsApp, shown to patients for questions
 DESK_WHATSAPP = "917559882838"          # front desk gets "new booking" WhatsApp alerts ("" = none)
 REVIEW_URL = ""                         # clinic's Google review link ("" = no review requests)
-SITE_URL = "https://drmirshadck.github.io/dr-anish-online-clinic"
-ALLOWED_ORIGINS = "https://drmirshadck.github.io"
+SITE_URL = "https://homoeocareonline.com"
+ALLOWED_ORIGINS = "https://homoeocareonline.com,https://www.homoeocareonline.com,https://drmirshadck.github.io"
 VAPID_SUBJECT = "mailto:support@arshees.com"
 WA_ENABLED = "0"                        # WhatsApp off for now (tap-to-send still works)
 WA_LANG = "en"
