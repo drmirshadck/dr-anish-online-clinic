@@ -12,7 +12,7 @@ window.SITE = {
     photo: "dr-anish.jpg",
     duo: [
       { photo: "dr-anish.jpg",   name: "Dr. Anish Mohan",  title: "BHMS · Chief Consultant" },
-      { photo: "dr-sarigha.jpg", name: "Dr. Sariga Sivan", title: "BHMS · Consultant" }
+      { photo: "dr-sarigha.jpg", name: "Dr. Sariga Sivan", title: "BHMS, MD (Hom) · Consultant" }
     ],
     eyebrow: "Homoeopathic Physicians · Since 2015",
     role: "Homoeocare Multi Speciality Clinic, Cherpulassery",
@@ -50,7 +50,7 @@ window.SITE = {
     heading: "A clinic that takes the time to understand the whole person, not just the complaint.",
     paragraphs: [
       "Dr. Anish Mohan trained at Government Homoeopathic Medical College, Calicut, and founded Homoeocare Multi Speciality Clinic in Manjakkal, Cherpulassery, in 2015. Eleven years on, the clinic has grown into a full team serving families across Palakkad.",
-      "Dr. Sariga Sivan completed her BHMS at the University of Calicut in 2013 and brings 12 years of homoeopathic practice. Registered with the Travancore-Cochin Council of Homoeopathic Medicine (Reg. No. 10674), she consults alongside Dr. Anish at Homoeocare.",
+      "Dr. Sariga Sivan holds a BHMS from the University of Calicut (2013) and an MD (Hom), and brings 12 years of homoeopathic practice. Registered with the Travancore-Cochin Council of Homoeopathic Medicine (Reg. No. 10674), she consults alongside Dr. Anish at Homoeocare.",
       "Consultations are unhurried and detailed. Each one begins with a full case history so that treatment is individual to the patient. The online clinic brings that same approach to patients who cannot travel to Cherpulassery."
     ]
   },
@@ -105,8 +105,8 @@ window.SITE = {
       id: "sarigha",
       name: "Dr. Sariga Sivan",
       photo: "dr-sarigha-face.jpg",
-      title: "BHMS · Consultant Homoeopathic Physician",
-      bio: "BHMS from the University of Calicut (2013), with 12 years of homoeopathic practice at Homoeocare Multi Speciality Clinic, Cherpulassery. Reg. No. 10674, Travancore-Cochin Council of Homoeopathic Medicine.",
+      title: "BHMS, MD (Hom) · Consultant Homoeopathic Physician",
+      bio: "BHMS from the University of Calicut (2013) and MD (Hom), with 12 years of homoeopathic practice at Homoeocare Multi Speciality Clinic, Cherpulassery. Reg. No. 10674, Travancore-Cochin Council of Homoeopathic Medicine.",
       languages: "Malayalam, English",
       calUser: "homoeocare-dr-sariga",  // cal.com/homoeocare-dr-sariga
       roomUrl: "https://drsarigasivan.daily.co/consult",
