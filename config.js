@@ -110,7 +110,7 @@ window.SITE = {
       bio: "BHMS from the University of Calicut (2013), with 12 years of homoeopathic practice at Homoeocare Multi Speciality Clinic, Cherpulassery. Reg. No. 10674, Travancore-Cochin Council of Homoeopathic Medicine.",
       languages: "Malayalam, English",
       calUser: "homoeocare-dr-sariga",  // cal.com/homoeocare-dr-sariga
-      roomUrl: "",                     // Dr. Sarigha's own Daily room
+      roomUrl: "https://drsarigasivan.daily.co/consult",
       upiId: "", payeeName: "",
       consultations: [
         { calSlug: "online-video-consultation", kind: "new", name: "New consultation", duration: "30 minutes", fee: 500, featured: true,
