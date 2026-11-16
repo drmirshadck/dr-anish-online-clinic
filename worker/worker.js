@@ -66,6 +66,7 @@ async function route(req, env, url, fromSite) {
   if (p === "/last-event" && M === "GET") return json((await env.PUSH.get("lastEvent", "json")) || {});
 
   if (!fromSite) throw err(403, "Not allowed.");
+  if (p === "/arrived" && M === "POST") return arrived(req, env);
   if (p === "/login" && M === "POST") return login(req, env);
 
   const role = await requireSession(req, env);
@@ -314,6 +315,14 @@ async function runReminders(env) {
           await waSend(env, b.phone, "reminder_24h", [b.name, d.name, when(b.start), joinLink(env, d)]);
           await env.PUSH.put("r24:" + b.uid, "1", { expirationTtl: 2 * 86400 });
         }
+        if (diff <= 62 * 60e3 && diff > 20 * 60e3 && !(await env.PUSH.get("d60:" + b.uid))) {
+          await env.PUSH.put("d60:" + b.uid, "1", { expirationTtl: 2 * 86400 });
+          await doctorAlert(env, d, "r60", { time: timeOnly(b.start), title: b.title });
+        }
+        if (diff <= 17 * 60e3 && diff > -5 * 60e3 && !(await env.PUSH.get("d15:" + b.uid))) {
+          await env.PUSH.put("d15:" + b.uid, "1", { expirationTtl: 2 * 86400 });
+          await doctorAlert(env, d, "r15", { time: timeOnly(b.start), title: b.title });
+        }
         if (diff <= 70 * 60e3 && diff > 0 && !(await env.PUSH.get("r1:" + b.uid))) {
           await waSend(env, b.phone, "reminder_1h", [b.name, d.name, timeOnly(b.start), joinLink(env, d)]);
           await env.PUSH.put("r1:" + b.uid, "1", { expirationTtl: 2 * 86400 });
@@ -370,6 +379,22 @@ async function report(env, docs, month) {
     per.push({ id: d.id, name: d.name, ...r });
   }
   return { month, clinic: env.CLINIC_NAME || "", generatedAt: new Date().toISOString(), total, doctors: per };
+}
+
+/* ---------------- doctor alerts: reminders and "patient waiting" ---------------- */
+// The phone fetches /last-event to show the text, so no patient details are put there.
+async function doctorAlert(env, d, type, extra) {
+  await env.PUSH.put("lastEvent", JSON.stringify({ type, doctor: d.id, doctorName: d.name, ...(extra || {}), at: Date.now() }));
+  return (await pushAll(env, "subs:" + d.id)) + (await pushAll(env, "subs:desk"));
+}
+async function arrived(req, env) {
+  const { doctor } = await body(req);
+  const d = doctors(env).find(x => x.id === doctor);
+  if (!d) throw err(400, "Unknown doctor.");
+  const k = "arr:" + d.id;
+  if (await env.PUSH.get(k)) return json({ ok: true, skipped: true });   // at most one alert a minute per room
+  await env.PUSH.put(k, "1", { expirationTtl: 60 });
+  return json({ ok: true, pushed: await doctorAlert(env, d, "arrived", {}) });
 }
 
 /* ---------------- web push (doctor/desk phones only) ---------------- */
