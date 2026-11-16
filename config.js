@@ -76,7 +76,7 @@ window.SITE = {
   clinic: {
     name: "Homoeocare Multi Speciality Clinic",
     whatsapp: "917559882838",
-    googleReviewUrl: "",
+    googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJzReTjZPRpzsRtJ87oBfZ4ks",
     upiId: "homoeocare@upi",          // DEMO — replace with the clinic's real UPI ID
     payeeName: "Homoeocare Multi Speciality Clinic"
   },

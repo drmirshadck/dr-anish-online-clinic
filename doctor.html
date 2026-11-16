@@ -186,6 +186,8 @@ function render() {
   if (tab === "leave") wireLeave();
   if (tab === "report") wireReport();
 }
+const REVIEW = ((window.SITE.clinic || {}).googleReviewUrl || "").trim();
+const reviewMsg = b => `Hello ${b.name}, thank you for consulting ${b.doctorName}. If you were happy with your care, please leave a short Google review: ${REVIEW} Thank you.`;
 function card(b) {
   const ref = upiRef(b.notes), ph = phoneDigits(b.phone);
   const other = b.notes.replace(/UPI ref:\s*\d{12}\s*(\(₹?\d+\))?/i, "").trim();
@@ -194,7 +196,7 @@ function card(b) {
     ? `<button class="btn no" data-no="${esc(b.uid)}" data-doc="${esc(b.doctor)}">Decline</button><button class="btn ok" data-ok="${esc(b.uid)}" data-doc="${esc(b.doctor)}" data-name="${esc(b.name)}">Confirm</button>`
     : tab === "upcoming"
       ? `${ph ? `<a class="btn wa" href="${waUrl(ph, msg)}" target="_blank" rel="noopener">Send link</a>` : ""}${!isDesk() || true ? `<button class="btn" data-call="${esc(b.doctor)}">Start call</button>` : ""}`
-      : `<button class="btn ghost" data-ns="${esc(b.uid)}" data-doc="${esc(b.doctor)}" ${b.absent ? "disabled" : ""}>${b.absent ? "Marked no-show" : "Patient didn't join"}</button><button class="btn" data-fu="${esc(b.uid)}" data-doc="${esc(b.doctor)}">Follow-up</button>`;
+      : `<button class="btn ghost" data-ns="${esc(b.uid)}" data-doc="${esc(b.doctor)}" ${b.absent ? "disabled" : ""}>${b.absent ? "Marked no-show" : "Patient didn't join"}</button><button class="btn" data-fu="${esc(b.uid)}" data-doc="${esc(b.doctor)}">Follow-up</button>${REVIEW && ph && !b.absent ? `<a class="btn wa" href="${waUrl(ph, reviewMsg(b))}" target="_blank" rel="noopener">Ask for Google review</a>` : ""}`;
   return `<div class="card${tab === "upcoming" && isToday(b.start) ? " today" : ""}">
     <div class="top"><div><h3>${esc(b.name)}</h3><div class="meta"><span>${esc(b.title)}</span>${isDesk() ? `<span><span class="tag doc">${esc(b.doctorName)}</span></span>` : ""}</div></div>
       <div class="when">${isToday(b.start) ? "Today" : esc(day(b.start))}<small>${esc(time(b.start))}</small></div></div>
